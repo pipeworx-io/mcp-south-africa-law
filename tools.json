@@ -1,0 +1,46 @@
+[
+  {
+    "name": "za_law_search",
+    "description": "Search South African Acts of Parliament by title or subject words, e.g. \"expropriation\", \"national health\" or \"cybercrimes\". Matching is full-text over the Government's Act pages, so results are Acts whose title or summary mention the words, most relevant first. Returns id, title, Act number and year (\"Act 13 of 2024\"), Government Gazette number and a link; 30 per page, next_page says whether to continue. Each Act is as published in the Government Gazette (not a consolidation). National Acts only, not provincial legislation or regulations. Pair with za_law_get.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Title or subject words, e.g. \"expropriation\" or \"national health insurance\""
+        },
+        "page": {
+          "type": "number",
+          "description": "Page number, 1-based (default 1)"
+        }
+      },
+      "required": [
+        "query"
+      ]
+    }
+  },
+  {
+    "name": "za_law_get",
+    "description": "Fetch one South African Act by id from za_law_search (e.g. \"acts/expropriation-act-13-2024-english-sepedi-24-jan-2025\"). Returns title, Act number and year, the Government's summary of what the Act does, the commencement statement where the page gives one, the gazetted PDF link(s) and, when the PDF has a readable text layer, the text (capped at max_chars; use offset to read on). The site states no in-force flag, so status is null. Recent gazette PDFs often lose letters in text extraction; when that is detected the text is withheld with an empty_reason rather than returned corrupted, and the PDF link is the authoritative text.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Id from za_law_search, e.g. \"acts/expropriation-act-13-2024-english-sepedi-24-jan-2025\""
+        },
+        "max_chars": {
+          "type": "number",
+          "description": "Cap on returned text (default 20000, max 100000)"
+        },
+        "offset": {
+          "type": "number",
+          "description": "Character offset into the text, to read on after a capped result"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "name": "@pipeworx/mcp-south-africa-law",
+  "version": "0.1.0",
+  "description": "South Africa law -- the South African Government's Acts collection on gov.za (Government Communication and Information System), which publishes each Act as gazetted, with a summary page.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "mcp-south-africa-law": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "south-africa-law"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipeworx-io/mcp-south-africa-law.git"
+  },
+  "mcpName": "io.github.pipeworx-io/south-africa-law",
+  "pipeworx": {
+    "mode": "gateway",
+    "slug": "south-africa-law",
+    "gatewaySlug": "south-africa-law",
+    "sourceHash": "v1-4695a33f491c00ba7facfeb94b62ea035de9adaa0d311c04a2f6a5308411fcb3",
+    "sourceCommit": "64d643fa9b2d925b75d2c708d48340c041f0ab55"
+  }
+}

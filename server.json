@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.pipeworx-io/south-africa-law",
+  "title": "South Africa Law",
+  "description": "South Africa law -- the South African Government's Acts collection on gov.za (Government…",
+  "version": "0.1.0",
+  "websiteUrl": "https://pipeworx.io/packs/south-africa-law",
+  "repository": {
+    "url": "https://github.com/pipeworx-io/mcp-south-africa-law",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://gateway.pipeworx.io/south-africa-law/mcp"
+    }
+  ]
+}
